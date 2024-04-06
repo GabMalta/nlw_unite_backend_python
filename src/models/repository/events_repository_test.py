@@ -20,8 +20,9 @@ def test_insert_events():
     
     print(response)
     
+#@pytest.mark.skip(reason='Novo Registro em Banco de Dados')    
 def test_get_event_by_id():
-    event_id = 'uuid-ttteste'
+    event_id = 'uuid-ttteste22'
     events_repository = EventsRepository()
     response = events_repository.get_event_by_id(event_id)
     

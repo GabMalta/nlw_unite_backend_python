@@ -1,2 +1,2 @@
 from .events import Events
-from .attendees import Attendees
+#from .attendees import Attendees

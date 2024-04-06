@@ -1,11 +1,11 @@
-from src.models.settings.base import Base
-from sqlalchemy import column, String, Integer
+# from src.models.settings.base import Base
+# from sqlalchemy import column, String, Integer
 
-class Attendees(Base):
-    id = column(String, primary_key=True)
-    name = column(String, nullable=False)
-    email = column(String, nullable=False)
-    event_id = column(String, nullable=False)
+# class Attendees(Base):
+#     id = column(String, primary_key=True)
+#     name = column(String, nullable=False)
+#     email = column(String, nullable=False)
+#     event_id = column(String, nullable=False)
     
     
     # "id" TEXT NOT NULL PRIMARY KEY,

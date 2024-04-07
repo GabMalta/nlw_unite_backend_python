@@ -17,7 +17,14 @@ def create_attendee(event_id):
 def find_badge_attendee(attendee_id):
     http_request = HttpRequest(param={'attendee_id': attendee_id})
     attendee_handler = AttendeesHandler()
-    print(f'2--> {http_request}')
     http_response = attendee_handler.find_attendee_badge(http_request)
+    
+    return jsonify(http_response.body), http_response.status_code
+
+@attendee_route_bp.route('/events/<event_id>/attendees', methods=['GET'])
+def get_attendees(event_id):
+    http_request = HttpRequest(param={'event_id': event_id})
+    attendee_handler = AttendeesHandler()
+    http_response = attendee_handler.find_attendees_from_event_id(http_request)
     
     return jsonify(http_response.body), http_response.status_code

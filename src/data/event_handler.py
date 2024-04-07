@@ -2,6 +2,8 @@ import uuid
 from src.models.repository.events_repository import EventsRepository
 from src.http_types.http_response import HttpResponse
 from src.http_types.http_request import HttpRequest
+from src.errors.error_types.http_not_found import HttpNotFound
+
 
 class EventHandler:
     def __init__(self):
@@ -22,7 +24,7 @@ class EventHandler:
         event = self.__envents_repository.get_event_by_id(event_id)
         event_attendees_count = self.__envents_repository.count_event_attendees(event_id)
         
-        if not event: raise Exception("Evento não encontrado")
+        if not event: raise HttpNotFound("Evento não encontrado")
         
         return HttpResponse(
             body={

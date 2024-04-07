@@ -5,7 +5,7 @@ from sqlalchemy.sql import func
 class CheckIns(Base):
     __tablename__ = 'check_ins'
     
-    id = Column(String, primary_key=True)
+    id = Column(Integer, primary_key=True)
     created_at = Column(DateTime, default=func.now())
     attendeeId = Column(String, ForeignKey('attendees.id'))
     

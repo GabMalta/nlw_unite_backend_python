@@ -2,7 +2,6 @@ import uuid
 from src.models.repository.events_repository import EventsRepository
 from src.http_types.http_response import HttpResponse
 from src.http_types.http_request import HttpRequest
-from src.models.entities.events import Events
 
 class EventHandler:
     def __init__(self):

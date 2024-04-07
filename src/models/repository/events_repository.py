@@ -51,8 +51,14 @@ class EventsRepository:
                         .query(Events)
                         .join(Attendees, Attendees.event_id == event_id)
                         .filter(Events.id == event_id)
+                         .with_entities(
+                            Events.maximum_attendees,
+                            Attendees.id
+                        )
                         .all()
                 )
+                
+                print(len(event_count))
                 
                 if not len(event_count):
                     return {

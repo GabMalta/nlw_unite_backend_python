@@ -27,7 +27,7 @@ class AttendeesRepository:
                 db.session.rollback()
                 raise exception
             
-    def attendee_get_by_id(attendee_id:str):
+    def attendee_get_by_id(self, attendee_id : str):
         with db_connect as db:
             try:
                 attendee = (
